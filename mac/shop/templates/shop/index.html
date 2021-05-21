@@ -1,0 +1,197 @@
+{%  extends 'shop/base.html' %}
+{% block css %}
+<!--body{-->
+<!--margin:0px;-->
+<!--padding:0px;-->
+<!--background-color:#FFCDC3;-->
+<!--}-->
+
+.cart
+{
+z-index:1000;
+}
+.indicate{
+<!--        background-color:blue;-->
+
+       margin-top:15%;
+}
+
+   .card{
+            margin-right:14px;
+
+            width:254px;
+            height:430px;
+            box-shadow:3px 3px 2px gray;
+            font-size:1rem;
+        }
+        .card-body h5,p
+        {
+            margin-left:15%;
+
+            }
+<!--        .card-body button-->
+<!--        {-->
+<!--            position:absolute;-->
+<!--            bottom:2%;-->
+<!--            }-->
+.card-body button{
+display:inline block;
+}
+        .card img
+        {   width:auto;
+            height:170px;
+            margin-left:15%;
+            margin-right:15%;
+            margin-top:5%;
+        }
+      .first{
+        width:100%;
+        margin:10px auto 5px;
+        
+      }
+
+
+
+      .first1{
+        width:100%;
+      }
+<!--    .col-md-3 img {-->
+<!--            -->
+<!--            height: 355px;-->
+<!--        }-->
+
+      img{
+        width:100%;
+      }
+
+      .container{
+        
+        margin-bottom: 10px;
+<!--        background-color: gray;-->
+        padding:20px;
+      
+      }
+      .d{
+        
+        background-color: black;
+          opacity: 0.6;
+        position:absolute;
+        right:-45px;
+        bottom:50%;
+      }
+.e{
+
+        background-color: black;
+        opacity: 0.6;
+        position:absolute;
+        left:-45px;
+        bottom:50%;
+      }
+.sale
+{
+margin-top:10px;
+border-radius:10px;
+width:100%;
+background-color:red;
+text-align:center;
+}
+.sale h1
+{
+text-align:center;
+text-decoration:underline;
+font-size:50px;
+font-family:'sans-serif';
+color:white;
+font-weight:bold;
+}
+<!--.sale img-->
+<!--{-->
+<!--height:300px;-->
+<!--width:auto;-->
+<!--.sale span-->
+<!--}-->
+.sale span
+{
+color:yellow;
+font-weight:700;
+font-size:30px;
+font-family:'arial';
+
+}
+.sale p
+{
+font-weight:700;
+margin-left:-20px;
+font-size:5rem;
+}
+
+.previous {
+    position:absolute;
+    left: -150px;
+}
+
+    {% endblock %}
+    <!-- Bootstrap CSS -->
+
+  {% block body %}
+  {% load static %}
+<!--<img src="https://source.unsplash.com/collection/190727/1600x900">-->
+ <div class="container">
+     <i class="bi bi-cart" style="width:300px;"></i>
+     <div class="sale"><h1>SALE</h1>
+<!--         <img src="{% static 'shop/santa.jpg' %} " alt="not found">-->
+        <span>EVERY PRODUCT</span><p style="text-align:center;">50% OFF</p></div>
+     {% for product,range,nslides in allprods %}
+     <hr>
+     <h5 style="padding:20px;">Recommanded --<u>{{product.0.category}}</u></h5>
+      <div id="carouselExampleIndicators{{forloop.counter}}" class="carousel slide first " data-bs-ride="carousel">
+        <div class="carousel-indicators indicate">
+          <button type="button" data-bs-target="#carouseklExampleIndicators{{forloop.counter}}" data-bs-slide-to="0" class="active bg-dark" aria-current='true' aria-label="Slide 1"></button>
+        {% for i in range %}
+            <button type="button" data-bs-target="#carouselExampleIndicators{{forloop.parentloop.counter}}" class="bg-dark" data-bs-slide-to={{i}} aria-label="Slide 2"></button>
+<!--          <button type="button" data-bs-target="#carouselExampleIndicators{{forloop.counter}}"  class="bg-dark"data-bs-slide-to="2" aria-label="Slide 3"></button>-->
+          {% endfor %}
+        </div>
+<!--        slide show start from here -->
+        <div class="carousel-inner ">
+          <div class="carousel-item active">
+            <div class="row">
+            {% for i in product %}
+              <div class="col-xs-3 col-sm-3 col-md-3">
+              <div class="card " >
+                <img  src='/media/{{i.image}}' class="card-img-top" alt="...">
+                  <div class="card-body" >
+                    <h5 class="card-title">{{i.product_name}}</h5>
+                    <p class="card-text">{{i.desc}} </p>
+                        <span id="divpr{{i.product_id}}" class="divpr">
+                    <button  id="pr{{i.product_id}}"  class="btn btn-primary cart my-2">Add to Cart</button>
+                        </span>
+                            <a  href="productview/{{i.product_id}}" > <button id="qv{{i.product_id}}"   class="btn btn-primary cart">Quick View</button></a>
+
+
+                  </div>
+              </div>
+          </div>
+              {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+            </div></div>
+            <div class="carousel-item"><div class='row'>
+
+            {% endif %}
+
+              {% endfor %}
+          </div>
+      </div>
+
+      </div>
+<button class="carousel-control-prev previous" type="button" data-bs-target="#carouselExampleIndicators{{forloop.counter}}" data-bs-slide="prev" style="position:absolute;left:-150px;">
+          <span class="carousel-control-prev-icon e" aria-hidden="true"></span>
+          <span class="visually-hidden" style="margin-right:10px;">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators{{forloop.counter}}" data-bs-slide="next">
+          <span class="carousel-control-next-icon d" aria-hidden="true"></span>
+          <span class="visually-hidden bg-dark">Next</span>
+        </button>
+      </div>
+{% endfor %}
+      {% endblock %}
+

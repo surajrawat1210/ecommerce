@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+     body
+     {
+     margin:0px;
+     padding:0px;
+     background-color:gray;
+     }
+
+     {% block css %} {% endblock %}</style>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+<!--<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">-->
+<!--  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>-->
+<!--</svg>-->
+
+<script src="https://kit.fontawesome.com/c0714e69a2.js" crossorigin="anonymous"></script>
+
+    <title> {% block title %} {% endblock %}</title>
+  </head>
+  <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/shop/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shop/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shop/tracker">Tracker</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shop/contact">Contact Us</a>
+        </li>
+<!--        <li class="nav-item dropdown">-->
+<!--          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">-->
+<!--            Dropdown-->
+<!--          </a>-->
+<!--          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--            <li><a class="dropdown-item" href="#">Action</a></li>-->
+<!--            <li><a class="dropdown-item" href="#">Another action</a></li>-->
+<!--            <li><hr class="dropdown-divider"></li>-->
+<!--            <li><a class="dropdown-item" href="#">Something else here</a></li>-->
+<!--          </ul>-->
+
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+<!--        </li>-->
+
+
+      </ul>
+      <form class="d-flex">
+          <span id="forcart" style="color:white;border-radius:50%;width:25px;height:25px;position:relative;top:2px;left:12%;background-color:red">1</span>
+          <a  class ='nav-link' href="cart/" style="margin-right:3%; color:white;font-size:1.5rem;"><i class="fas fa-shopping-cart forcart"></i></a>
+
+
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+<!--        <button class="btn btn-outline-success" type="submit">Search</button>-->
+        <a  class='nav-link nav-item'style="color:white;margin-top:1.5%;border-radius:50%;font_size:2rem;" href=""><i class="fas fa-search"></i></a>
+        <a class='nav-link nav-item' style="margin-right:3%; color:white;font-size:1.5rem;" href=""><i class="fas fa-user-circle"></i></a>
+      </form>
+    </div>
+  </div>
+</nav>
+ {% block body %} {% endblock %}
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    -->
+
+        <script>
+  //find out the cart item from local storage
+if(localStorage.getItem('cart') == null)
+  {
+    var cart={};
+    console.log(cart);
+  }
+else
+  {
+
+    cart = JSON.parse(localStorage.getItem('cart'));
+    var sum=0;
+    for(var i in cart)
+    {
+      sum+=cart[i];
+      console.log(sum);
+    document.getElementById('forcart').innerHTML=sum;
+
+    }
+    updateCart(cart);
+  }
+//jQuery starts here//
+$('.cart').click(function()
+  {
+  console.log(cart);
+    console.log('clicked');
+    var idstr=this.id.toString();
+    console.log(idstr);
+    if(cart[idstr] !=undefined)
+      {
+        cart[idstr]+=1;
+      }
+    else
+    {
+      cart[idstr]=1;
+    }
+    updateCart(cart);
+
+  }
+);
+
+function updateCart(cart) {
+    var sum=0;
+    for (var item in cart) {
+        sum+=cart[item];
+
+
+        $('div'+item).html("<button id='minus" + item + "' class='btn btn-primary minus'>-</button> <span id='val" + item + "'>" + cart[item] + "</span> <button id='plus" + item + "' class='btn btn-primary plus'>+</button>");
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    document.getElementById('forcart').innerHTML = sum;
+      console.log("value"+Object.keys(cart).length);
+    console.log(cart);
+}
+$('.divpr').on('click','button.minus',function(){
+console.log("minus clicked");
+var ids=this.id.toString().slice(5,);
+console.log(ids);
+console.log(cart[ids]);
+cart[ids]-=1;
+cart[ids]=Math.max(0,cart[ids]);
+document.getElementById('div'+ids).innerHTML=cart[ids];
+updateCart(cart);
+});
+$('.divpr').on('click','button.plus',function()
+{
+console.log("plus clicked");
+var ids=this.id.toString().slice(4,);
+console.log(ids);
+cart[ids]+=1;
+document.getElementById('div'+ids).innerHTML=cart[ids];
+updateCart(cart);
+});
+$("#forcart").click(function(){
+var text="";
+console.log("hello");
+for(var i in cart)
+{
+   text+="<div class='col-xs-3 col-sm-3 col-md-3'><div class='card-body' ><h5 class='card-title'>hello</h5><p class='card-text'>hello </p></div></div>"
+}
+$('.row').html(text);
+});
+
+{% block js %}
+{% endblock %}
+
+</script>
+
+
+  </body>
+</html>
